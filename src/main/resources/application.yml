@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: "agenda-api"
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: securityPassword
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+    actuator:
+      endpoints:
+        web:
+          exposure:
+            include: "*"
+api:
+  security:
+    token:
+      secret: my-secret-key-to-agend
