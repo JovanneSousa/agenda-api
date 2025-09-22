@@ -2,19 +2,21 @@ version: "3.8"
 
 services:
   postgres:
-    image: postgres:latest
+    image: postgres:15
     container_name: agenda-postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: securityPassword
-      POSTGRES_DB: agenda
+      POSTGRES_DB: agenda_db
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - agenda-network
 
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:7
     container_name: agenda-pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
@@ -25,6 +27,9 @@ services:
       - postgres
     networks:
       - agenda-network
+
+volumes:
+  postgres_data:
 
 networks:
   agenda-network:
