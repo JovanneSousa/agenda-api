@@ -1,6 +1,6 @@
 package br.com.jsousa.agenda.auth.infra.security;
 
-import br.com.jsousa.agenda.domain.user.User;
+import br.com.jsousa.agenda.user.domain.User;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 /**
  * TokenService.java

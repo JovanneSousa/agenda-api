@@ -1,7 +1,7 @@
-package br.com.jsousa.agenda.auth.services;
+package br.com.jsousa.agenda.contacts.services;
 
-import br.com.jsousa.agenda.auth.dto.ContactWithUserDTO;
-import br.com.jsousa.agenda.repositories.IContactRepository;
+import br.com.jsousa.agenda.contacts.dto.ContactWithUserDTO;
+import br.com.jsousa.agenda.contacts.repositories.IContactRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

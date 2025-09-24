@@ -1,7 +1,7 @@
-package br.com.jsousa.agenda.repositories;
+package br.com.jsousa.agenda.contacts.repositories;
 
-import br.com.jsousa.agenda.auth.dto.ContactWithUserDTO;
-import br.com.jsousa.agenda.domain.contacts.Contact;
+import br.com.jsousa.agenda.contacts.dto.ContactWithUserDTO;
+import br.com.jsousa.agenda.contacts.domain.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -19,7 +19,7 @@ import java.util.List;
  */
 public interface IContactRepository extends JpaRepository<Contact, Long> {
 
-    @Query("SELECT new br.com.jsousa.agenda.auth.dto.ContactWithUserDTO(" +
+    @Query("SELECT new br.com.jsousa.agenda.contacts.dto.ContactWithUserDTO(" +
             "c.id, c.name, c.email, c.phone, u.id, u.username, u.email) " +
             "FROM Contact c JOIN c.user u " +
             "WHERE u.id = :userId")

@@ -1,4 +1,4 @@
-package br.com.jsousa.agenda.auth.dto;
+package br.com.jsousa.agenda.contacts.dto;
 
 /**
  * ContactWithUserDTO.java

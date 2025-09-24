@@ -1,7 +1,7 @@
-package br.com.jsousa.agenda.auth.controllers;
+package br.com.jsousa.agenda.contacts.controller;
 
-import br.com.jsousa.agenda.auth.dto.ContactWithUserDTO;
-import br.com.jsousa.agenda.auth.services.ContactService;
+import br.com.jsousa.agenda.contacts.dto.ContactWithUserDTO;
+import br.com.jsousa.agenda.contacts.services.ContactService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

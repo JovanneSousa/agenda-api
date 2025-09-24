@@ -1,12 +1,10 @@
-package br.com.jsousa.agenda.domain.user;
+package br.com.jsousa.agenda.user.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.UUID;
 
 /**
  * User.java

@@ -1,6 +1,6 @@
-package br.com.jsousa.agenda.domain.contacts;
+package br.com.jsousa.agenda.contacts.domain;
 
-import br.com.jsousa.agenda.domain.user.User;
+import br.com.jsousa.agenda.user.domain.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

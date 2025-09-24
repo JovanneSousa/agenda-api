@@ -1,7 +1,7 @@
 package br.com.jsousa.agenda.auth.infra.security;
 
-import br.com.jsousa.agenda.domain.user.User;
-import br.com.jsousa.agenda.repositories.IUserRepository;
+import br.com.jsousa.agenda.user.domain.User;
+import br.com.jsousa.agenda.user.repositories.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

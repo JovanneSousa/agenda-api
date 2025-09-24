@@ -1,11 +1,10 @@
-package br.com.jsousa.agenda.repositories;
+package br.com.jsousa.agenda.user.repositories;
 
-import br.com.jsousa.agenda.domain.user.User;
+import br.com.jsousa.agenda.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Repository
 public interface IUserRepository extends JpaRepository<User, String> {
