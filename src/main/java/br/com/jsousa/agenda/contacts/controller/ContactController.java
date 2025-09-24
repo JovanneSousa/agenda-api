@@ -1,8 +1,11 @@
 package br.com.jsousa.agenda.contacts.controller;
 
+import br.com.jsousa.agenda.auth.infra.security.CustomUserDetails;
 import br.com.jsousa.agenda.contacts.dto.ContactWithUserDTO;
 import br.com.jsousa.agenda.contacts.services.ContactService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,14 +23,15 @@ import java.util.List;
  * @since 9/22/2025
  */
 @RestController
-@RequestMapping(path = "/users/{userId}/contacts")
+@RequestMapping(path = "/contacts")
 @RequiredArgsConstructor
 public class ContactController {
 
     private final ContactService contactService;
 
     @GetMapping
-    public List<ContactWithUserDTO> getUserContacts(@PathVariable String userId) {
-        return this.contactService.getContactByUserId(userId);
+    public List<ContactWithUserDTO> getUserContacts(@AuthenticationPrincipal CustomUserDetails loggedUser) {
+        String userId = loggedUser.getId();
+        return contactService.getContactByUserId(userId);
     }
 }
