@@ -2,6 +2,7 @@ package br.com.jsousa.agenda.contacts.controller;
 
 import br.com.jsousa.agenda.auth.infra.security.CustomUserDetails;
 import br.com.jsousa.agenda.contacts.domain.Contact;
+import br.com.jsousa.agenda.contacts.dto.ContactRequestDTO;
 import br.com.jsousa.agenda.contacts.dto.ContactWithUserDTO;
 import br.com.jsousa.agenda.contacts.services.ContactService;
 import br.com.jsousa.agenda.user.domain.User;
@@ -44,9 +45,9 @@ public class ContactController {
             User loggedUser = userDetails.getUser(); // pega o usuário logado
 
             Contact savedContact = contactService.save(
-                    contactRequest.getName(),
-                    contactRequest.getEmail(),
-                    contactRequest.getPhone(),
+                    contactRequest.name(),
+                    contactRequest.email(),
+                    contactRequest.phone(),
                     loggedUser
             );
 
