@@ -2,11 +2,13 @@ package br.com.jsousa.agenda.contacts.repositories;
 
 import br.com.jsousa.agenda.contacts.dto.ContactWithUserDTO;
 import br.com.jsousa.agenda.contacts.domain.Contact;
+import br.com.jsousa.agenda.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * IContactRepository.java
@@ -24,4 +26,6 @@ public interface IContactRepository extends JpaRepository<Contact, Long> {
             "FROM Contact c JOIN c.user u " +
             "WHERE u.id = :userId")
     List<ContactWithUserDTO> findContactsWithUserByUserId(@Param("userId") String userId);
+
+    Optional<Contact> findByNameAndUser(String name, User user);
 }
