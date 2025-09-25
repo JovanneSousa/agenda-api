@@ -9,5 +9,5 @@ package br.com.jsousa.agenda.auth.dto;
  * @version 1.0
  * @since 9/21/2025
  */
-public record ResponseAuthDTO(String username, String token){
+public record ResponseAuthDTO(String username, String name, String token){
 }
