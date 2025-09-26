@@ -42,7 +42,7 @@ public class ContactController {
             @AuthenticationPrincipal CustomUserDetails userDetails
     ) {
         try {
-            User loggedUser = userDetails.getUser(); // pega o usuário logado
+            User loggedUser = userDetails.getUser();
 
             Contact savedContact = contactService.save(
                     contactRequest.name(),
@@ -51,7 +51,17 @@ public class ContactController {
                     loggedUser
             );
 
-            return ResponseEntity.ok(savedContact);
+            ContactWithUserDTO reponseDTO = new ContactWithUserDTO(
+                    savedContact.getId(),
+                    savedContact.getName(),
+                    savedContact.getEmail(),
+                    savedContact.getPhone(),
+                    loggedUser.getId(),
+                    loggedUser.getName(),
+                    loggedUser.getEmail()
+            );
+
+            return ResponseEntity.ok(reponseDTO);
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
